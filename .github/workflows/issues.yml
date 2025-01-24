@@ -1,0 +1,10 @@
+name: Issues
+on: 
+  issues:
+    types: [opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, locked, unlocked, milestoned, demilestoned]
+jobs:
+  log-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar accion del evento.
+        run: echo "Action: ${{ github.event.action }}"
